@@ -6,8 +6,7 @@ export default defineConfig({
   plugins: [react()],
   server: {
     proxy: {
-      // eslint-disable-next-line no-useless-escape
-      "^.*\\/api$": {
+      "/api": {
         target: "https://www.prisjakt.nu/_internal/bff",
         changeOrigin: true,
         secure: false,
