@@ -4,10 +4,8 @@ import App from "./App.tsx";
 import "./index.css";
 import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
 
-const isProd = import.meta.env.PROD;
-
 const client = new ApolloClient({
-  uri: isProd ? "https://www.prisjakt.nu/_internal/bff" : "/api",
+  uri: "/api",
   cache: new InMemoryCache(),
 });
 
