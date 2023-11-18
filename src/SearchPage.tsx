@@ -65,7 +65,7 @@ export const SearchPage = () => {
     <main className="w-full h-full flex font-mono justify-center items-center flex-col space-y-10 bg-radial-gradient-first shadow-second">
       <div className="h-contan w-contain flex justify-center items-center space-x-2">
         <img src="logo_icon.svg" />
-        <div className="flex justify-center items-center space-x-1 sm:flex-row flex-col">
+        <div className="flex justify-center items-center sm:space-x-1 sm:flex-row flex-col">
         <h1 className="text-white text-3xl sm:text-4xl font-inter">
         Prisjakt
         </h1>
