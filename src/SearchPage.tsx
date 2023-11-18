@@ -1,6 +1,7 @@
 import { ChangeEvent, useEffect, useState } from "react";
 import { gql, useLazyQuery } from "@apollo/client";
 import { createSearchParams, useNavigate } from "react-router-dom";
+import { KeyboardEvent } from "react";
 
 const GET_PRODUCTS = gql`
   query ($query: String!) {
@@ -61,6 +62,13 @@ export const SearchPage = () => {
     setCheapestProduct(cheapestProduct);
   };
 
+  const onKeyDown = (event: KeyboardEvent<HTMLInputElement>) => {
+    const key = event.key;
+    if(key === "Enter") {
+        onClick();
+    }
+  };
+
   return (
     <main className="w-full h-full flex font-mono justify-center items-center flex-col space-y-10 bg-radial-gradient-first shadow-second">
       <div className="h-contan w-contain flex justify-center items-center space-x-2">
@@ -74,6 +82,7 @@ export const SearchPage = () => {
       </div>
       <input
         onChange={onChange}
+        onKeyDown={onKeyDown}
         className="w-60 sm:w-3/4 h-16 border bg-white rounded-2xl pl-2 text-black"
       ></input>
       <button
